@@ -7,3 +7,11 @@
 
 import Foundation
 
+struct Order: Codable, Identifiable {
+    var id: String
+    var code: String
+    var name: String
+    var address: String
+    var date: Date
+    var amount: Int
+}

@@ -11,7 +11,27 @@ import SwiftUI
 struct Junction2023_FinlandSaunaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                Text("기록")
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("기록")
+                    }
+                
+                NavigationStack {
+                    OrderListView()
+                }
+                .tabItem {
+                    Image(systemName: "list.bullet.clipboard.fill")
+                    Text("물류관리")
+                }
+                
+                Text("개인설정")
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("개인")
+                    }
+            }
         }
     }
 }
