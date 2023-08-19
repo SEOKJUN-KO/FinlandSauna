@@ -102,9 +102,9 @@ struct ActivityIndicator: UIViewRepresentable {
         uiView.startAnimating()
     }
 }
-
-struct StorageItemRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        StorageItemRowView(item: StorageItem(id: UUID(), name: "Surströmming", brand: "Roda Ulven", itemType: "marinated herring", serving: 300, amount: 1, position: "A-1", tag: 1))
-    }
-}
+//
+//struct StorageItemRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StorageItemRowView(item: StorageItem(id: UUID(), name: "Surströmming", brand: "Roda Ulven", itemType: "marinated herring", serving: 300, amount: 1, position: "A-1", tag: 1), image: "")
+//    }
+//}
