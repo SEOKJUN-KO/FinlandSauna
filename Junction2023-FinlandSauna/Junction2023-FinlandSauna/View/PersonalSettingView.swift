@@ -6,6 +6,45 @@
 //
 
 import SwiftUI
+import MLKitTranslate
+
+enum Languages: String, CaseIterable {
+    case ko
+    case en
+    case th
+    case vi
+    case sv
+    
+    var contryName: String {
+        switch self {
+        case .ko:
+            return "Korea"
+        case .en:
+            return "English"
+        case .th:
+            return "Thailand"
+        case .vi:
+            return "Vietnam"
+        case .sv:
+            return "Sweden"
+        }
+    }
+    
+    var translateLanguage: TranslateLanguage {
+        switch self {
+        case .ko:
+            return .korean
+        case .en:
+            return .english
+        case .th:
+            return . thai
+        case .vi:
+            return .vietnamese
+        case .sv:
+            return .swedish
+        }
+    }
+}
 
 enum Languages: String, CaseIterable {
     case ko

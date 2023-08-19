@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BE7CB96838462EBEF07182B /* libPods-Junction2023-FinlandSauna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F4472A69DBB819C3A5E106 /* libPods-Junction2023-FinlandSauna.a */; };
+		3DA03B192A90D3D0004664FE /* TranslateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA03B182A90D3D0004664FE /* TranslateManager.swift */; };
 		3DFB5B0C2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B0B2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift */; };
 		3DFB5B102A9091E800974903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB5B0F2A9091E800974903 /* Assets.xcassets */; };
 		3DFB5B132A9091E800974903 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB5B122A9091E800974903 /* Preview Assets.xcassets */; };
@@ -24,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DA03B182A90D3D0004664FE /* TranslateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateManager.swift; sourceTree = "<group>"; };
 		3DFB5B082A9091E600974903 /* Junction2023-FinlandSauna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Junction2023-FinlandSauna.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFB5B0B2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Junction2023_FinlandSaunaApp.swift; sourceTree = "<group>"; };
 		3DFB5B0F2A9091E800974903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		3DFB5B262A90993000974903 /* StorageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItem.swift; sourceTree = "<group>"; };
 		3DFB5B282A9099F900974903 /* StorageItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItemRowView.swift; sourceTree = "<group>"; };
 		3DFB5B2E2A90C6E100974903 /* ProcessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessViewModel.swift; sourceTree = "<group>"; };
+		58F4472A69DBB819C3A5E106 /* libPods-Junction2023-FinlandSauna.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Junction2023-FinlandSauna.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE79B6B2A90A01A009A3DCC /* PersonalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingView.swift; sourceTree = "<group>"; };
 		6CE79B712A90FB5C009A3DCC /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
 		6CE79B732A90FB74009A3DCC /* ProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE7CB96838462EBEF07182B /* libPods-Junction2023-FinlandSauna.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +62,7 @@
 			children = (
 				3DFB5B0A2A9091E600974903 /* Junction2023-FinlandSauna */,
 				3DFB5B092A9091E600974903 /* Products */,
+				CB85E8681E99B483D32A3833 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +115,7 @@
 				3DFB5B1B2A90924600974903 /* Order.swift */,
 				3DFB5B262A90993000974903 /* StorageItem.swift */,
 				3DFB5B2E2A90C6E100974903 /* ProcessViewModel.swift */,
+				3DA03B182A90D3D0004664FE /* TranslateManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +128,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CB85E8681E99B483D32A3833 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58F4472A69DBB819C3A5E106 /* libPods-Junction2023-FinlandSauna.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DFB5B162A9091E800974903 /* Build configuration list for PBXNativeTarget "Junction2023-FinlandSauna" */;
 			buildPhases = (
+				99AC7D89012B00FE81EAC9CB /* [CP] Check Pods Manifest.lock */,
 				3DFB5B042A9091E600974903 /* Sources */,
 				3DFB5B052A9091E600974903 /* Frameworks */,
 				3DFB5B062A9091E600974903 /* Resources */,
+				D5DC46F24C2CE05A1DFC8097 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +203,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		99AC7D89012B00FE81EAC9CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Junction2023-FinlandSauna-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5DC46F24C2CE05A1DFC8097 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Junction2023-FinlandSauna/Pods-Junction2023-FinlandSauna-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Junction2023-FinlandSauna/Pods-Junction2023-FinlandSauna-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Junction2023-FinlandSauna/Pods-Junction2023-FinlandSauna-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DFB5B042A9091E600974903 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3DFB5B212A9092E600974903 /* OrderListView.swift in Sources */,
+				3DA03B192A90D3D0004664FE /* TranslateManager.swift in Sources */,
 				3DFB5B1F2A90926700974903 /* Ex+Color.swift in Sources */,
 				3DFB5B2F2A90C6E100974903 /* ProcessViewModel.swift in Sources */,
 				3DFB5B292A9099F900974903 /* StorageItemRowView.swift in Sources */,

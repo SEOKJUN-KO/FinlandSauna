@@ -9,12 +9,14 @@ import SwiftUI
 
 struct OrderDetailView: View {
     let title: String
+    let orderItems: [StorageItem]
+    
+    @AppStorage("myLanguage") var myLanguage: Languages = .en
+    @AppStorage("targetLanguage") var targetLanguage: Languages = .th
+    
     var body: some View {
-        List {
-            ForEach(0..<5) { i in
-                StorageItemRowView(item: StorageItem(id: UUID(), name: "Surströmming", brand: "Roda Ulven", itemType: "marinated herring", serving: 300, amount: 1, position: "A-1", tag: i))
-            }
-            
+        List(orderItems) { item in
+            StorageItemRowView(item: item)
         }
         .listStyle(.plain)
         .navigationTitle(title)
@@ -23,6 +25,6 @@ struct OrderDetailView: View {
 
 struct OrderDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderDetailView(title: "Order287")
+        OrderDetailView(title: "Order 2222", orderItems: [])
     }
 }
