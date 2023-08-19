@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProcessingView: View {
     @State var processItems: [StorageItem]
-    let array: [[String]] = [["A - 1", "A - 2", "A - 3", "A - 4"], ["B - 1", "B - 2", "B - 3", "B - 4"]]
+    let array: [[String]] = [["A-1", "A-2", "A-3", "A-4"], ["B-1", "B-2", "B-3", "B-4"]]
     @State private var selected: Bool = false
-    @State private var storageIndex: String = "B - 3"
+    @State private var storageIndex: String = "B-3"
     @State private var moveY:CGFloat = 280
     @State var presentSheet = true
     @State var nfc = "emptyNFC"
