@@ -35,10 +35,15 @@ struct PersonalSettingView: View {
     @State var inCountry: Languages = .en
     let countries: [Languages] = Languages.allCases
     
+    @AppStorage("onboarding") var isOnboarindViewActive: Bool = true
+    
+    @AppStorage("myLanguage") var myLanguage: Languages = .en
+    @AppStorage("targetLanguage") var targetLanguage: Languages = .th
+    
     var body: some View {
         ZStack(alignment: .top){
             Color(.white)
-            VStack(){
+            VStack {
                 Text("You are in")
                     .font(.system(size: 17, weight: .bold))
                     .frame(width: 361, alignment: .leading)
@@ -69,7 +74,7 @@ struct PersonalSettingView: View {
                 Text("You are from")
                     .font(.system(size: 17, weight: .bold))
                     .frame(width: 361, alignment: .leading)
-                Menu{
+                Menu {
                     Picker("Choose a color", selection: $fromCountry) {
                         ForEach(countries, id: \.self) {
                             Text($0.contryName)
@@ -92,6 +97,31 @@ struct PersonalSettingView: View {
                     .background(.clear)
                 }
                 .padding(.bottom, 22)
+                
+                Spacer()
+                
+                Button {
+                    // 완료 기능
+                    if isOnboarindViewActive {
+                        self.isOnboarindViewActive = false
+                    }
+                    
+                    myLanguage = fromCountry
+                    targetLanguage = inCountry
+                    
+                } label: {
+                    Text("Complete")
+                        .frame(width: .infinity)
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.body)
+                        .padding(.vertical, 19)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.theme.main001)
+                        .cornerRadius(20)
+                }
+                .padding(.horizontal, 32)
+                .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 8)
             }
             .padding(.top, 41)
         }
