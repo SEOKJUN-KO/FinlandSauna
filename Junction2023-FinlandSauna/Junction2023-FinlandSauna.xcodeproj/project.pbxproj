@@ -191,6 +191,8 @@
 				3DFB5B292A9099F900974903 /* StorageItemRowView.swift in Sources */,
 				6CE79B6C2A90A01A009A3DCC /* PersonalSettingView.swift in Sources */,
 				3DFB5B252A90986B00974903 /* OrderDetailView.swift in Sources */,
+				6CE79B702A90C667009A3DCC /* ProcessView.swift in Sources */,
+				6CE79B6E2A90B3B0009A3DCC /* ProcessingView.swift in Sources */,
 				3DFB5B272A90993000974903 /* StorageItem.swift in Sources */,
 				3DFB5B1C2A90924600974903 /* Order.swift in Sources */,
 				3DFB5B232A90937600974903 /* OrderRowView.swift in Sources */,

@@ -15,6 +15,7 @@ struct StorageItem: Codable, Identifiable {
     var serving: Double
     var amount: Int
     var position: String
+    var tag: Int
     
     init(id: UUID, name: String, brand: String, itemType: String, serving: Double, amount: Int, position: String) {
         self.id = id
