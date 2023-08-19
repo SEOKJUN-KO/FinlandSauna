@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProcessingView: View {
     @State var processItems: [StorageItem]
-    let array: [[String]] = [["A-1", "A-2", "A-3", "A-4"], ["B-1", "B-2", "B-3", "B-4"]]
+    let array: [[String]] = [["A - 1", "A - 2", "A - 3", "A - 4"], ["B - 1", "B - 2", "B - 3", "B - 4"]]
     @State private var selected: Bool = false
-    @State private var storageIndex: String = "B-3"
+    @State private var storageIndex: String = "B - 3"
     @State private var moveY:CGFloat = 280
     @State var presentSheet = true
     @State var nfc = "emptyNFC"
@@ -23,21 +23,20 @@ struct ProcessingView: View {
         ZStack(alignment: .top) {
             Color.theme.grayGradation005
                 .ignoresSafeArea()
-            VStack{
-                Spacer()
+            VStack {
                 HStack(spacing: 89) {
                     ForEach(array, id: \.self) { row in
-                        VStack(spacing: 41) {
+                        VStack(spacing: 36) {
                             ForEach(row, id: \.self) { item in
                                 RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor(item == storageIndex ? .blue : .white)
+                                    .foregroundColor(item == storageIndex ? .theme.main001 : .white)
                                     .frame(width: 120, height: 30)
                                     .overlay(
                                         ZStack{
                                             RoundedRectangle(cornerRadius: 8)
                                                 .stroke(lineWidth: 1)
                                             Text(item)
-                                                .foregroundColor(.gray.opacity(0.2))
+                                                .foregroundColor(item == storageIndex ? .white : .theme.gray004)
                                                 .font(.system(size: 20, weight: .bold))
                                         }
                                     )
@@ -48,11 +47,12 @@ struct ProcessingView: View {
                 .padding(.top, 53)
                 ZStack {
                     Color.white
+                        .cornerRadius(20)
                     
                     TabView(selection: $index){
                         ForEach(processItems) { item in
                             ProcessView(image: Image(systemName: "square.and.arrow.down.fill"), id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
-                                .cornerRadius(20)
+                                .padding(.top, 20)
                                 .tag(item.tag)
                                 .onAppear{
                                     storageIndex = item.position
@@ -72,6 +72,7 @@ struct ProcessingView: View {
                                 }
                         }
                     }
+                    .padding(.top, 20)
                     .tabViewStyle(PageTabViewStyle())
                 }
                 
@@ -108,6 +109,7 @@ struct ProcessingView: View {
         .onAppear{
             relocateY(relocate: 290)
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
