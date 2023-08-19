@@ -82,16 +82,11 @@ struct ProcessingView: View {
             Image(nfc)
                 .resizable()
                 .frame(width: 82.58, height: 82.58)
-            VStack {
-                Circle()
-                    .frame(width: 33, height: 33)
-                    .foregroundColor(.blue)
-                    .offset(x: 0, y: beaconManager.estimatedDistance*32)
-                
-                Text("RSSIIPAD: \(beaconManager.RSSIIpad)")
-                Text("RSSIMAC: \(beaconManager.RSSIMac)")
-                Text("RSSIMAC: \(beaconManager.estimatedDistance)")
-            }
+            
+            Circle()
+                .frame(width: 33, height: 33)
+                .foregroundColor(.blue)
+                .offset(x: 0, y: beaconManager.estimatedDistance*32)
             
             if( alarmShow ){
                 ZStack{
