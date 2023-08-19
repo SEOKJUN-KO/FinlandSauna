@@ -31,8 +31,8 @@ enum Languages: String, CaseIterable {
 }
 
 struct PersonalSettingView: View {
-    @State var fromCountry: Languages = .th
-    @State var inCountry: Languages = .en
+    @State var fromCountry: Languages
+    @State var inCountry: Languages
     let countries: [Languages] = Languages.allCases
     
     @AppStorage("onboarding") var isOnboarindViewActive: Bool = true
@@ -111,7 +111,6 @@ struct PersonalSettingView: View {
                     
                 } label: {
                     Text("Complete")
-                        .frame(width: .infinity)
                         .foregroundColor(.white)
                         .bold()
                         .font(.body)
@@ -121,6 +120,7 @@ struct PersonalSettingView: View {
                         .cornerRadius(20)
                 }
                 .padding(.horizontal, 32)
+                .padding(.bottom, 16)
                 .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 8)
             }
             .padding(.top, 41)
@@ -130,6 +130,6 @@ struct PersonalSettingView: View {
 
 struct PersonalSettingView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalSettingView()
+        PersonalSettingView(fromCountry: .en, inCountry: .th)
     }
 }

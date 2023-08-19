@@ -10,17 +10,18 @@ import SwiftUI
 @main
 struct Junction2023_FinlandSaunaApp: App {
     @AppStorage("onboarding") var isOnboarindViewActive: Bool = true
-    
+    @AppStorage("myLanguage") var myLanguage: Languages = .en
+    @AppStorage("targetLanguage") var targetLanguage: Languages = .th
     var body: some Scene {
         WindowGroup {
             if isOnboarindViewActive {
-                PersonalSettingView()
+                PersonalSettingView(fromCountry: myLanguage, inCountry: targetLanguage)
             } else {
                 TabView {
-                    Text("기록")
+                    Text("History")
                         .tabItem {
                             Image(systemName: "house.fill")
-                            Text("기록")
+                            Text("History")
                         }
                     
                     NavigationStack {
@@ -28,13 +29,13 @@ struct Junction2023_FinlandSaunaApp: App {
                     }
                     .tabItem {
                         Image(systemName: "list.bullet.clipboard.fill")
-                        Text("물류관리")
+                        Text("Logitics")
                     }
                     
-                    Text("개인설정")
+                    PersonalSettingView(fromCountry: myLanguage, inCountry: targetLanguage)
                         .tabItem {
                             Image(systemName: "person.fill")
-                            Text("개인")
+                            Text("Personal")
                         }
                 }
             }
