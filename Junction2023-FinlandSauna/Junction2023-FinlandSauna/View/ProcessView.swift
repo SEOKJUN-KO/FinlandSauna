@@ -9,7 +9,7 @@ import SwiftUI
 import MLKitTranslate
 
 struct ProcessView: View {
-    var image: Image
+    var image: String
     var id: String
     var location: String
     var needNumber: Int
@@ -24,7 +24,7 @@ struct ProcessView: View {
     @AppStorage("myLanguage") var myLanguage: Languages = .en
     @AppStorage("targetLanguage") var targetLanguage: Languages = .th
     
-    init(image: Image, id: String, location: String, needNumber: Int, rawName: String, detail: String, brand: String, serving: Double) {
+    init(image: String, id: String, location: String, needNumber: Int, rawName: String, detail: String, brand: String, serving: Double) {
         self.image = image
         self.id = id
         self.location = location
@@ -70,9 +70,9 @@ struct ProcessView: View {
                     .font(.system(size: 17, weight: .regular))
                     .frame(width: 300, alignment: .leading)
                 VStack{
-                    image
+                    Image(image)
+                        .resizable()
                         .frame(width: 140, height: 100)
-                        .border(.red)
                 }.frame(width: 300, alignment: .leading)
                 HStack{
                     ZStack{
@@ -114,6 +114,6 @@ struct ProcessView: View {
 
 struct ProcessView_Previews: PreviewProvider {
     static var previews: some View {
-        ProcessView(image: Image(systemName: "square.and.arrow.down.fill"), id: "104-834-25", location: "A-1", needNumber: 1, rawName: "Surströmming", detail: "fermented herring fish", brand: "Roda Ulven", serving: 300)
+        ProcessView(image: "footShampoo", id: "104-834-25", location: "A-1", needNumber: 1, rawName: "Surströmming", detail: "fermented herring fish", brand: "Roda Ulven", serving: 300)
     }
 }

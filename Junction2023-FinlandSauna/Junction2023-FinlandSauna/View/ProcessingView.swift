@@ -50,7 +50,7 @@ struct ProcessingView: View {
                     
                     TabView(selection: $index){
                         ForEach(processItems) { item in
-                            ProcessView(image: Image(systemName: "square.and.arrow.down.fill"), id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
+                            ProcessView(image: item.image, id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
                                 .cornerRadius(20)
                                 .tag(item.tag)
                                 .onAppear{
@@ -109,14 +109,14 @@ struct ProcessingView: View {
     }
 }
 
-struct ProcessingView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProcessingView(processItems:
-                        [StorageItem(id: UUID(), name: "Z", brand: "E", itemType: "K", serving: 300, amount: 2, position: "B-1", tag: 1),
-                         StorageItem(id: UUID(), name: "W", brand: "R", itemType: "Q", serving: 100, amount: 4, position: "B-4", tag: 2)]
-        )
-    }
-}
+//struct ProcessingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProcessingView(processItems:
+//                        [StorageItem(id: UUID(), name: "Z", brand: "E", itemType: "K", serving: 300, amount: 2, position: "B-1", tag: 1),
+//                         StorageItem(id: UUID(), name: "W", brand: "R", itemType: "Q", serving: 100, amount: 4, position: "B-4", tag: 2)]
+//        )
+//    }
+//}
 
 extension ProcessingView {
     func relocateY(relocate: CGFloat) {
