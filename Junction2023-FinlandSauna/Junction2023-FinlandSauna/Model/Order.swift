@@ -31,10 +31,10 @@ struct Order: Codable, Identifiable {
 extension Order {
     static let sampleOrders: [Order] = [
         Order(id: "Order287", code: "20230819A287", name: "정승균", address: "부산 해운대구 APEC로 55", date: Date(), storageItems: [
-            StorageItem(id: UUID(), name: "พริงเกิลส์", brand: "Nongsim", itemType: "snack", serving: 110, amount: 1, position: "A - 1"),
-            StorageItem(id: UUID(), name: "เวลช์", brand: "Nongsim", itemType: "drink", serving: 355, amount: 2, position: "B - 2"),
-            StorageItem(id: UUID(), name: "กระทิงแดง", brand: "Lotte", itemType: "drink", serving: 250, amount: 1, position: "A - 3"),
-            StorageItem(id: UUID(), name: "โปรตีนบาร์", brand: "Coupang", itemType: "snack", serving: 50, amount: 1, position: "A - 6"),
+            StorageItem(id: UUID(), name: "พริงเกิลส์", brand: "Nongsim", itemType: "snack", serving: 110, amount: 1, position: "A - 1", tag: 1),
+            StorageItem(id: UUID(), name: "เวลช์", brand: "Nongsim", itemType: "drink", serving: 355, amount: 2, position: "B - 2", tag: 2),
+            StorageItem(id: UUID(), name: "กระทิงแดง", brand: "Lotte", itemType: "drink", serving: 250, amount: 1, position: "A - 3", tag: 3),
+            StorageItem(id: UUID(), name: "โปรตีนบาร์", brand: "Coupang", itemType: "snack", serving: 50, amount: 1, position: "A - 6", tag: 4),
         ]),
         Order(id: "Order288", code: "20230819A288", name: "최민규", address: "부산 해운대구 APEC로 55", date: Date(), storageItems: [StorageItem(), StorageItem(), StorageItem()]),
         Order(id: "Order289", code: "20230819A289", name: "박상원", address: "부산 해운대구 APEC로 55", date: Date(), storageItems: [StorageItem(), StorageItem(), StorageItem(), StorageItem()]),

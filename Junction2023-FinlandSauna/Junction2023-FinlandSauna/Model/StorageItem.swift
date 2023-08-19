@@ -17,7 +17,7 @@ struct StorageItem: Codable, Identifiable {
     var position: String
     var tag: Int
     
-    init(id: UUID, name: String, brand: String, itemType: String, serving: Double, amount: Int, position: String) {
+    init(id: UUID, name: String, brand: String, itemType: String, serving: Double, amount: Int, position: String, tag: Int) {
         self.id = id
         self.name = name
         self.brand = brand
@@ -25,6 +25,7 @@ struct StorageItem: Codable, Identifiable {
         self.serving = serving
         self.amount = amount
         self.position = position
+        self.tag = tag
     }
     
     init() {
@@ -35,5 +36,6 @@ struct StorageItem: Codable, Identifiable {
         self.serving = 0
         self.amount = 0
         self.position = ""
+        self.tag = 1
     }
 }
