@@ -47,6 +47,7 @@ extension Order {
             StorageItem(id: UUID(), name: "C Cell ถ่านอัลคาไลน์อเนกประสงค์", brand: "Amazon", itemType: "Batteries", serving: 30, amount: 1, position: "B-4", tag: 1, image: "battery"),
             StorageItem(id: UUID(), name: "ถ้วยกระดาษ Ripple กาแฟแดง 6 ออนซ์", brand: "SheriffDrink", itemType: "Paper Cup", serving: 70, amount: 1, position: "B-1", tag: 1, image: "cup"),
             StorageItem(id: UUID(), name: "บนร่างกาย มาล้างเท้ากันเถอะ", brand: "On the body", itemType: "foot shampoo", serving: 110, amount: 1, position: "A-4", tag: 1, image: "footShampoo"),
+            
         ]),
     ]
 }

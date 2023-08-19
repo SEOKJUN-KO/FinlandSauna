@@ -50,7 +50,7 @@ struct ProcessView: View {
                         .font(.system(size: 28, weight: .bold))
                 }
                 .frame(width: 300)
-                .padding(.top, 10)
+                .padding(.top, 20)
                 if showingDownloading {
                     ActivityIndicator(animate: .constant(true))
                 } else {
