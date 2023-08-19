@@ -11,6 +11,8 @@
 		3DFB5B0E2A9091E600974903 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B0D2A9091E600974903 /* ContentView.swift */; };
 		3DFB5B102A9091E800974903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB5B0F2A9091E800974903 /* Assets.xcassets */; };
 		3DFB5B132A9091E800974903 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB5B122A9091E800974903 /* Preview Assets.xcassets */; };
+		3DFB5B1C2A90924600974903 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B1B2A90924600974903 /* Order.swift */; };
+		3DFB5B1F2A90926700974903 /* Ex+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B1E2A90926700974903 /* Ex+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		3DFB5B0D2A9091E600974903 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DFB5B0F2A9091E800974903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DFB5B122A9091E800974903 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DFB5B1B2A90924600974903 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		3DFB5B1E2A90926700974903 /* Ex+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				3DFB5B0B2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift */,
-				3DFB5B0D2A9091E600974903 /* ContentView.swift */,
+				3DFB5B1D2A90925100974903 /* Extension */,
+				3DFB5B1A2A90921500974903 /* Model */,
+				3DFB5B192A90920F00974903 /* View */,
 				3DFB5B0F2A9091E800974903 /* Assets.xcassets */,
 				3DFB5B112A9091E800974903 /* Preview Content */,
 			);
@@ -65,6 +71,30 @@
 				3DFB5B122A9091E800974903 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DFB5B192A90920F00974903 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB5B0D2A9091E600974903 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DFB5B1A2A90921500974903 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB5B1B2A90924600974903 /* Order.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DFB5B1D2A90925100974903 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB5B1E2A90926700974903 /* Ex+Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFB5B1F2A90926700974903 /* Ex+Color.swift in Sources */,
+				3DFB5B1C2A90924600974903 /* Order.swift in Sources */,
 				3DFB5B0E2A9091E600974903 /* ContentView.swift in Sources */,
 				3DFB5B0C2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift in Sources */,
 			);
