@@ -7,10 +7,33 @@
 
 import SwiftUI
 
+enum Languages: String, CaseIterable {
+    case ko
+    case en
+    case th
+    case vi
+    case sv
+    
+    var contryName: String {
+        switch self {
+        case .ko:
+            return "Korea"
+        case .en:
+            return "English"
+        case .th:
+            return "Thailand"
+        case .vi:
+            return "Vietnam"
+        case .sv:
+            return "Sweden"
+        }
+    }
+}
+
 struct PersonalSettingView: View {
-    @State var fromCountry = "Korean"
-    @State var inCountry = "Korean"
-    var countries = ["Korean", "English", "Vietnam", "Africa"]
+    @State var fromCountry: Languages = .th
+    @State var inCountry: Languages = .en
+    let countries: [Languages] = Languages.allCases
     
     var body: some View {
         ZStack(alignment: .top){
@@ -22,20 +45,20 @@ struct PersonalSettingView: View {
                 Menu{
                     Picker("Choose a color", selection: $inCountry) {
                         ForEach(countries, id: \.self) {
-                            Text($0)
+                            Text($0.contryName)
                         }
                     }
                 } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
-                            .fill(.blue)
+                            .fill(Color.theme.gray005)
                         HStack{
-                            Text(inCountry)
+                            Text(inCountry.contryName)
                                 .font(.system(size: 17, weight: .bold))
                                 .frame(width: 300, alignment: .leading)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                             Image(systemName: "chevron.up.chevron.down")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                     }
                     .frame(width: 361, height: 57)
@@ -49,20 +72,20 @@ struct PersonalSettingView: View {
                 Menu{
                     Picker("Choose a color", selection: $fromCountry) {
                         ForEach(countries, id: \.self) {
-                            Text($0)
+                            Text($0.contryName)
                         }
                     }
                 } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
-                            .fill(.blue)
+                            .fill(Color.theme.gray005)
                         HStack{
-                            Text(fromCountry)
+                            Text(fromCountry.contryName)
                                 .font(.system(size: 17, weight: .bold))
                                 .frame(width: 300, alignment: .leading)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                             Image(systemName: "chevron.up.chevron.down")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                     }
                     .frame(width: 361, height: 57)
