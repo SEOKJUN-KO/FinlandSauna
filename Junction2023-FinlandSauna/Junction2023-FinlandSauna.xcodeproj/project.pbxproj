@@ -17,6 +17,7 @@
 		3DFB5B252A90986B00974903 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B242A90986B00974903 /* OrderDetailView.swift */; };
 		3DFB5B272A90993000974903 /* StorageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B262A90993000974903 /* StorageItem.swift */; };
 		3DFB5B292A9099F900974903 /* StorageItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B282A9099F900974903 /* StorageItemRowView.swift */; };
+		6CE79B6C2A90A01A009A3DCC /* PersonalSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE79B6B2A90A01A009A3DCC /* PersonalSettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		3DFB5B242A90986B00974903 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		3DFB5B262A90993000974903 /* StorageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItem.swift; sourceTree = "<group>"; };
 		3DFB5B282A9099F900974903 /* StorageItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItemRowView.swift; sourceTree = "<group>"; };
+		6CE79B6B2A90A01A009A3DCC /* PersonalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				3DFB5B222A90937600974903 /* OrderRowView.swift */,
 				3DFB5B242A90986B00974903 /* OrderDetailView.swift */,
 				3DFB5B282A9099F900974903 /* StorageItemRowView.swift */,
+				6CE79B6B2A90A01A009A3DCC /* PersonalSettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				3DFB5B212A9092E600974903 /* OrderListView.swift in Sources */,
 				3DFB5B1F2A90926700974903 /* Ex+Color.swift in Sources */,
 				3DFB5B292A9099F900974903 /* StorageItemRowView.swift in Sources */,
+				6CE79B6C2A90A01A009A3DCC /* PersonalSettingView.swift in Sources */,
 				3DFB5B252A90986B00974903 /* OrderDetailView.swift in Sources */,
 				3DFB5B272A90993000974903 /* StorageItem.swift in Sources */,
 				3DFB5B1C2A90924600974903 /* Order.swift in Sources */,
