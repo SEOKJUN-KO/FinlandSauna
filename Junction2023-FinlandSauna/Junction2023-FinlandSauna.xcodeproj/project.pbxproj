@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3BE7CB96838462EBEF07182B /* libPods-Junction2023-FinlandSauna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F4472A69DBB819C3A5E106 /* libPods-Junction2023-FinlandSauna.a */; };
 		3DA03B192A90D3D0004664FE /* TranslateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA03B182A90D3D0004664FE /* TranslateManager.swift */; };
+		3DA03B1B2A9121A3004664FE /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA03B1A2A9121A3004664FE /* BeaconManager.swift */; };
+		3DA03B1D2A9121C8004664FE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA03B1C2A9121C8004664FE /* NetworkManager.swift */; };
 		3DFB5B0C2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB5B0B2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift */; };
 		3DFB5B102A9091E800974903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB5B0F2A9091E800974903 /* Assets.xcassets */; };
 		3DFB5B132A9091E800974903 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB5B122A9091E800974903 /* Preview Assets.xcassets */; };
@@ -27,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		3DA03B182A90D3D0004664FE /* TranslateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateManager.swift; sourceTree = "<group>"; };
+		3DA03B1A2A9121A3004664FE /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
+		3DA03B1C2A9121C8004664FE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3DA03B1E2A91228A004664FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3DFB5B082A9091E600974903 /* Junction2023-FinlandSauna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Junction2023-FinlandSauna.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFB5B0B2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Junction2023_FinlandSaunaApp.swift; sourceTree = "<group>"; };
 		3DFB5B0F2A9091E800974903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +70,6 @@
 				FDAD82659EDD643DE54C396C /* Pods-Junction2023-FinlandSauna.debug.xcconfig */,
 				BB549DCF4C7B5EC8DE15BA61 /* Pods-Junction2023-FinlandSauna.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -90,6 +94,7 @@
 		3DFB5B0A2A9091E600974903 /* Junction2023-FinlandSauna */ = {
 			isa = PBXGroup;
 			children = (
+				3DA03B1E2A91228A004664FE /* Info.plist */,
 				3DFB5B0B2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift */,
 				3DFB5B1D2A90925100974903 /* Extension */,
 				3DFB5B1A2A90921500974903 /* Model */,
@@ -129,6 +134,8 @@
 				3DFB5B262A90993000974903 /* StorageItem.swift */,
 				3DFB5B2E2A90C6E100974903 /* ProcessViewModel.swift */,
 				3DA03B182A90D3D0004664FE /* TranslateManager.swift */,
+				3DA03B1A2A9121A3004664FE /* BeaconManager.swift */,
+				3DA03B1C2A9121C8004664FE /* NetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,7 +282,9 @@
 				6CE79B722A90FB5C009A3DCC /* ProcessingView.swift in Sources */,
 				3DFB5B1C2A90924600974903 /* Order.swift in Sources */,
 				3DFB5B232A90937600974903 /* OrderRowView.swift in Sources */,
+				3DA03B1D2A9121C8004664FE /* NetworkManager.swift in Sources */,
 				3DFB5B0C2A9091E600974903 /* Junction2023_FinlandSaunaApp.swift in Sources */,
+				3DA03B1B2A9121A3004664FE /* BeaconManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,11 +417,14 @@
 				DEVELOPMENT_TEAM = G7X65ZSJ3J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Junction2023-FinlandSauna/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "$(MARKETING_VERSION)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,11 +450,14 @@
 				DEVELOPMENT_TEAM = G7X65ZSJ3J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Junction2023-FinlandSauna/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "$(MARKETING_VERSION)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
