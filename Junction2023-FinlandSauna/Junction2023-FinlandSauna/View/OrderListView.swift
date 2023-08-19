@@ -11,22 +11,25 @@ struct OrderListView: View {
     @StateObject var process = ProcessViewModel()
     var body: some View {
         ZStack {
-            VStack(alignment: .leading) {
-                Text("Today's Ship Out")
-                    .font(.title2)
-                    .bold()
-                    .padding(.horizontal, 16)
+            List {
+                VStack(alignment: .leading) {
+                    Text("Today's Ship Out")
+                        .font(.title2)
+                        .bold()
+                        .padding(.horizontal, 16)
+                }
                 
-                List(process.orders) { order in
+                ForEach(process.orders) { order in
                     NavigationLink {
                         OrderDetailView(title: order.id, orderItems: order.storageItems)
                     } label: {
                         OrderRowView(order: order)
                     }
                 }
-                .listStyle(.plain)
-                .navigationTitle("Logitics")
             }
+            .listStyle(.plain)
+            .listRowSeparator(.hidden)
+            
             VStack {
                 Spacer()
                 NavigationLink {
@@ -45,10 +48,11 @@ struct OrderListView: View {
                         .cornerRadius(20)
                 }
                 .padding(.horizontal, 32)
-                .padding(.bottom, 16)
                 .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 8)
             }
+            .padding(.bottom, 32)
         }
+        .navigationTitle("Logistics")
     }
 }
 

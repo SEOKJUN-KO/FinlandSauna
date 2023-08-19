@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Junction2023-FinlandSauna.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

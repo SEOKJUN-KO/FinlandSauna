@@ -46,29 +46,6 @@ enum Languages: String, CaseIterable {
     }
 }
 
-enum Languages: String, CaseIterable {
-    case ko
-    case en
-    case th
-    case vi
-    case sv
-    
-    var contryName: String {
-        switch self {
-        case .ko:
-            return "Korea"
-        case .en:
-            return "English"
-        case .th:
-            return "Thailand"
-        case .vi:
-            return "Vietnam"
-        case .sv:
-            return "Sweden"
-        }
-    }
-}
-
 struct PersonalSettingView: View {
     @State var fromCountry: Languages
     @State var inCountry: Languages

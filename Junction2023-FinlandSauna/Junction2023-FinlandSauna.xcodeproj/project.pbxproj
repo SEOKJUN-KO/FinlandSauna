@@ -43,6 +43,8 @@
 		6CE79B6B2A90A01A009A3DCC /* PersonalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingView.swift; sourceTree = "<group>"; };
 		6CE79B712A90FB5C009A3DCC /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
 		6CE79B732A90FB74009A3DCC /* ProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessView.swift; sourceTree = "<group>"; };
+		BB549DCF4C7B5EC8DE15BA61 /* Pods-Junction2023-FinlandSauna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Junction2023-FinlandSauna.release.xcconfig"; path = "Target Support Files/Pods-Junction2023-FinlandSauna/Pods-Junction2023-FinlandSauna.release.xcconfig"; sourceTree = "<group>"; };
+		FDAD82659EDD643DE54C396C /* Pods-Junction2023-FinlandSauna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Junction2023-FinlandSauna.debug.xcconfig"; path = "Target Support Files/Pods-Junction2023-FinlandSauna/Pods-Junction2023-FinlandSauna.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		249D1453C811CB31EE20154E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDAD82659EDD643DE54C396C /* Pods-Junction2023-FinlandSauna.debug.xcconfig */,
+				BB549DCF4C7B5EC8DE15BA61 /* Pods-Junction2023-FinlandSauna.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3DFB5AFF2A9091E600974903 = {
 			isa = PBXGroup;
 			children = (
 				3DFB5B0A2A9091E600974903 /* Junction2023-FinlandSauna */,
 				3DFB5B092A9091E600974903 /* Products */,
 				CB85E8681E99B483D32A3833 /* Frameworks */,
+				249D1453C811CB31EE20154E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,6 +398,7 @@
 		};
 		3DFB5B172A9091E800974903 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDAD82659EDD643DE54C396C /* Pods-Junction2023-FinlandSauna.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -414,6 +428,7 @@
 		};
 		3DFB5B182A9091E800974903 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB549DCF4C7B5EC8DE15BA61 /* Pods-Junction2023-FinlandSauna.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
