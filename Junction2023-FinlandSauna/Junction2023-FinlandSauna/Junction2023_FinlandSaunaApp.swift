@@ -9,28 +9,35 @@ import SwiftUI
 
 @main
 struct Junction2023_FinlandSaunaApp: App {
+    @AppStorage("onboarding") var isOnboarindViewActive: Bool = true
+    @AppStorage("myLanguage") var myLanguage: Languages = .en
+    @AppStorage("targetLanguage") var targetLanguage: Languages = .th
     var body: some Scene {
         WindowGroup {
-            TabView {
-                Text("기록")
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("기록")
+            if isOnboarindViewActive {
+                PersonalSettingView(fromCountry: myLanguage, inCountry: targetLanguage)
+            } else {
+                TabView {
+                    Text("History")
+                        .tabItem {
+                            Image(systemName: "house.fill")
+                            Text("History")
+                        }
+                    
+                    NavigationStack {
+                        OrderListView()
                     }
-                
-                NavigationStack {
-                    OrderListView()
-                }
-                .tabItem {
-                    Image(systemName: "list.bullet.clipboard.fill")
-                    Text("물류관리")
-                }
-                
-                Text("개인설정")
                     .tabItem {
-                        Image(systemName: "person.fill")
-                        Text("개인")
+                        Image(systemName: "list.bullet.clipboard.fill")
+                        Text("Logitics")
                     }
+                    
+                    PersonalSettingView(fromCountry: myLanguage, inCountry: targetLanguage)
+                        .tabItem {
+                            Image(systemName: "person.fill")
+                            Text("Personal")
+                        }
+                }
             }
         }
     }
