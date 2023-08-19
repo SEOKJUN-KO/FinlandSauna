@@ -15,4 +15,5 @@ struct StorageItem: Codable, Identifiable {
     var serving: Double
     var amount: Int
     var position: String
+    var tag: Int
 }

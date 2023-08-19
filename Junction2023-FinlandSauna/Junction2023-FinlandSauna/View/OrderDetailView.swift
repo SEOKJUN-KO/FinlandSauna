@@ -11,8 +11,8 @@ struct OrderDetailView: View {
     let title: String
     var body: some View {
         List {
-            ForEach(0..<5) { _ in
-                StorageItemRowView(item: StorageItem(id: UUID(), name: "Surströmming", brand: "Roda Ulven", itemType: "marinated herring", serving: 300, amount: 1, position: "A-1"))
+            ForEach(0..<5) { i in
+                StorageItemRowView(item: StorageItem(id: UUID(), name: "Surströmming", brand: "Roda Ulven", itemType: "marinated herring", serving: 300, amount: 1, position: "A-1", tag: i))
             }
             
         }
