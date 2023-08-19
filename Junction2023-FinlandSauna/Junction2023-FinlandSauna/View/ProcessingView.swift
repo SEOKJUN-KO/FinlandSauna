@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProcessingView: View {
-    @Binding var processItems: [StorageItem]
+    @State var processItems: [StorageItem]
     let array: [[String]] = [["A-1", "A-2", "A-3", "A-4"], ["B-1", "B-2", "B-3", "B-4"]]
     @State private var selected: Bool = false
     @State private var storageIndex: String = "B-3"
@@ -105,9 +105,9 @@ struct ProcessingView: View {
 
 struct ProcessingView_Previews: PreviewProvider {
     static var previews: some View {
-        ProcessingView(processItems: .constant(
+        ProcessingView(processItems:
             [StorageItem(id: UUID(), name: "Z", brand: "E", itemType: "K", serving: 300, amount: 2, position: "B-1", tag: 1),
-             StorageItem(id: UUID(), name: "W", brand: "R", itemType: "Q", serving: 100, amount: 4, position: "B-4", tag: 2)])
+             StorageItem(id: UUID(), name: "W", brand: "R", itemType: "Q", serving: 100, amount: 4, position: "B-4", tag: 2)]
         )
     }
 }

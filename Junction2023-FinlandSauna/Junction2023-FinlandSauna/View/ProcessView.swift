@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MLKitTranslate
 
 struct ProcessView: View {
     var image: Image
@@ -16,6 +17,12 @@ struct ProcessView: View {
     var detail: String
     var brand: String
     var serving: Double
+    
+    @State var translatedName: String = ""
+    @State var showingDownloading: Bool = false
+    
+    @AppStorage("myLanguage") var myLanguage: Languages = .en
+    @AppStorage("targetLanguage") var targetLanguage: Languages = .th
     
     init(image: Image, id: String, location: String, needNumber: Int, rawName: String, detail: String, brand: String, serving: Double) {
         self.image = image
@@ -44,10 +51,14 @@ struct ProcessView: View {
                 }
                 .frame(width: 300)
                 .padding(.top, 10)
-                Text("Surstromming")
-                    .font(.system(size: 22, weight: .bold))
-                    .frame(width: 300, alignment: .leading)
-                    .padding(.bottom, 8)
+                if showingDownloading {
+                    ActivityIndicator(animate: .constant(true))
+                } else {
+                    Text(translatedName)
+                        .font(.system(size: 22, weight: .bold))
+                        .frame(width: 300, alignment: .leading)
+                        .padding(.bottom, 8)
+                }
                 
                 Text("Item: "+detail)
                     .font(.system(size: 17, weight: .regular))
@@ -81,6 +92,22 @@ struct ProcessView: View {
                 .frame(width: 300)
             }
             .padding(.top, 16)
+        }
+        .onAppear {
+            let options = TranslatorOptions(sourceLanguage: targetLanguage.translateLanguage, targetLanguage: myLanguage.translateLanguage)
+            let translator = Translator.translator(options: options)
+            let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true)
+            self.showingDownloading = true
+            translator.downloadModelIfNeeded(with: conditions) { error in
+                guard error == nil else { return }
+                self.showingDownloading = true
+                translator.translate(rawName) { translatedText, error in
+                    guard error == nil, let translatedText = translatedText else { return }
+                    print(translatedText)
+                    translatedName = translatedText
+                }
+                self.showingDownloading = false
+            }
         }
     }
 }

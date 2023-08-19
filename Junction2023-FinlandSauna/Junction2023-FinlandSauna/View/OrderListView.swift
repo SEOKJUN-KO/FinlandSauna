@@ -34,7 +34,7 @@ struct OrderListView: View {
                 Spacer()
                 NavigationLink {
                     if let firstItem = process.orders.first {
-                        OrderDetailView(title: firstItem.id, orderItems: firstItem.storageItems)
+                        ProcessingView(processItems: firstItem.storageItems)
                     }
                             
                 } label: {
