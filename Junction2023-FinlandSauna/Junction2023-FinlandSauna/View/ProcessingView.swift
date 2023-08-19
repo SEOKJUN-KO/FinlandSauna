@@ -17,6 +17,7 @@ struct ProcessingView: View {
     @State var nfc = "emptyNFC"
     @State private var index: Int = 1
     @State private var alarmShow: Bool = false
+    @StateObject var beaconManager = BeaconManager()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -75,16 +76,22 @@ struct ProcessingView: View {
                 }
                 
             }
+            .onAppear{
+                beaconManager.startScanning()
+            }
             Image(nfc)
                 .resizable()
                 .frame(width: 82.58, height: 82.58)
-            
-            
-            Circle()
-                .frame(width: 33, height: 33)
-                .foregroundColor(.blue)
-                .offset(x: 0, y: moveY)
-            
+            VStack {
+                Circle()
+                    .frame(width: 33, height: 33)
+                    .foregroundColor(.blue)
+                    .offset(x: 0, y: beaconManager.estimatedDistance*32)
+                
+                Text("RSSIIPAD: \(beaconManager.RSSIIpad)")
+                Text("RSSIMAC: \(beaconManager.RSSIMac)")
+                Text("RSSIMAC: \(beaconManager.estimatedDistance)")
+            }
             
             if( alarmShow ){
                 ZStack{
