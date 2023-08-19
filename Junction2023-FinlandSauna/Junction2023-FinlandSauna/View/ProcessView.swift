@@ -105,6 +105,8 @@ struct ProcessView: View {
                     guard error == nil, let translatedText = translatedText else { return }
                     print(translatedText)
                     translatedName = translatedText
+                    
+                    NetworkManager().drawTranslate(translatedString: translatedName)
                 }
                 self.showingDownloading = false
             }
