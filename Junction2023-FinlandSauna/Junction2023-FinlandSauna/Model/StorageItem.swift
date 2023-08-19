@@ -15,4 +15,24 @@ struct StorageItem: Codable, Identifiable {
     var serving: Double
     var amount: Int
     var position: String
+    
+    init(id: UUID, name: String, brand: String, itemType: String, serving: Double, amount: Int, position: String) {
+        self.id = id
+        self.name = name
+        self.brand = brand
+        self.itemType = itemType
+        self.serving = serving
+        self.amount = amount
+        self.position = position
+    }
+    
+    init() {
+        self.id = UUID()
+        self.name = ""
+        self.brand = ""
+        self.itemType = ""
+        self.serving = 0
+        self.amount = 0
+        self.position = ""
+    }
 }

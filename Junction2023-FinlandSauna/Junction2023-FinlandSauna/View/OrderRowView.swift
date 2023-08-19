@@ -35,7 +35,7 @@ struct OrderRowView: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 13)
         }
-        .background(Color.secondary)
+        .background(Color.theme.grayGradation005)
         .cornerRadius(20)
         .padding(.horizontal, 16)
     }
@@ -43,6 +43,6 @@ struct OrderRowView: View {
 
 struct OrderRowView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderRowView(order: Order(id: "Order288", code: "20230819A288", name: "홍길동", address: "부산 해운대구 APEC로 55", date: Date(), amount: 3))
+        OrderRowView(order: Order.sampleOrders.first!)
     }
 }
