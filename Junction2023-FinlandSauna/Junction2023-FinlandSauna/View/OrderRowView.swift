@@ -37,7 +37,6 @@ struct OrderRowView: View {
         }
         .background(Color.theme.grayGradation005)
         .cornerRadius(20)
-        .padding(.horizontal, 16)
     }
 }
 
