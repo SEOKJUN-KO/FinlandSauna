@@ -38,7 +38,7 @@ struct ProcessView: View {
     var body: some View {
         ZStack(alignment: .top){
             RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(.gray.opacity(0.15))
+                .foregroundColor(.theme.gray006)
                 .frame(width: 361,height: 350)
             
             VStack{

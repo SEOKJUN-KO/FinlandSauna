@@ -20,7 +20,7 @@ struct ProcessingView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            Color.gray.opacity(0.15)
+            Color.theme.grayGradation005
                 .ignoresSafeArea()
             VStack{
                 Spacer()
@@ -45,29 +45,35 @@ struct ProcessingView: View {
                     }
                 }
                 .padding(.top, 53)
-                TabView(selection: $index){
-                    ForEach(processItems) { item in
-                        ProcessView(image: Image(systemName: "square.and.arrow.down.fill"), id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
-                            .tag(item.tag)
-                            .onAppear{
-                                storageIndex = item.position
-                                relocateY(relocate: moveY)
-                            }
-                            .onTapGesture {
-                                if(processItems.count > index){
-                                    index += 1
-                                    alarmShow = true
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                        alarmShow = false
+                ZStack {
+                    Color.white
+                    
+                    TabView(selection: $index){
+                        ForEach(processItems) { item in
+                            ProcessView(image: Image(systemName: "square.and.arrow.down.fill"), id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
+                                .cornerRadius(20)
+                                .tag(item.tag)
+                                .onAppear{
+                                    storageIndex = item.position
+                                    relocateY(relocate: moveY)
+                                }
+                                .onTapGesture {
+                                    if(processItems.count > index){
+                                        index += 1
+                                        alarmShow = true
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                            alarmShow = false
+                                        }
+                                    }
+                                    else{
+                                        //네비게이션 뒤로 가기
                                     }
                                 }
-                                else{
-                                    //네비게이션 뒤로 가기
-                                }
-                            }
+                        }
                     }
+                    .tabViewStyle(PageTabViewStyle())
                 }
-                .tabViewStyle(PageTabViewStyle())
+                
             }
             Image(nfc)
                 .resizable()
@@ -106,8 +112,8 @@ struct ProcessingView: View {
 struct ProcessingView_Previews: PreviewProvider {
     static var previews: some View {
         ProcessingView(processItems:
-            [StorageItem(id: UUID(), name: "Z", brand: "E", itemType: "K", serving: 300, amount: 2, position: "B-1", tag: 1),
-             StorageItem(id: UUID(), name: "W", brand: "R", itemType: "Q", serving: 100, amount: 4, position: "B-4", tag: 2)]
+                        [StorageItem(id: UUID(), name: "Z", brand: "E", itemType: "K", serving: 300, amount: 2, position: "B-1", tag: 1),
+                         StorageItem(id: UUID(), name: "W", brand: "R", itemType: "Q", serving: 100, amount: 4, position: "B-4", tag: 2)]
         )
     }
 }
