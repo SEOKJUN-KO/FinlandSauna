@@ -17,6 +17,7 @@ struct ProcessView: View {
     var detail: String
     var brand: String
     var serving: Double
+    var color: String
     
     @State var translatedName: String = ""
     @State var showingDownloading: Bool = false
@@ -24,7 +25,7 @@ struct ProcessView: View {
     @AppStorage("myLanguage") var myLanguage: Languages = .en
     @AppStorage("targetLanguage") var targetLanguage: Languages = .th
     
-    init(image: String, id: String, location: String, needNumber: Int, rawName: String, detail: String, brand: String, serving: Double) {
+    init(image: String, id: String, location: String, needNumber: Int, rawName: String, detail: String, brand: String, serving: Double, color: String) {
         self.image = image
         self.id = id
         self.location = location
@@ -33,6 +34,7 @@ struct ProcessView: View {
         self.detail = detail
         self.brand = brand
         self.serving = serving
+        self.color = color
     }
     
     var body: some View {
@@ -87,7 +89,7 @@ struct ProcessView: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 80, height: 30)
-                            .foregroundColor(Color("FS_main001"))
+                            .foregroundColor(Color(color))
                         Text(location)
                             .foregroundColor(.white)
                             .font(.system(size: 17, weight: .bold))
@@ -118,8 +120,8 @@ struct ProcessView: View {
     }
 }
 
-struct ProcessView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProcessView(image: "footShampoo", id: "104-834-25", location: "A-1", needNumber: 1, rawName: "Surströmming", detail: "fermented herring fish", brand: "Roda Ulven", serving: 300)
-    }
-}
+//struct ProcessView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProcessView(image: "footShampoo", id: "104-834-25", location: "A-1", needNumber: 1, rawName: "Surströmming", detail: "fermented herring fish", brand: "Roda Ulven", serving: 300, color: "red")
+//    }
+//}

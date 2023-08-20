@@ -54,7 +54,7 @@ struct ProcessingView: View {
                     
                     TabView(selection: $index){
                         ForEach(processItems) { item in
-                            ProcessView(image: item.image, id: "104-834-25", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
+                            ProcessView(image: item.image, id: "104-834-25", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving, color: item.color)
                                 .cornerRadius(20)
                                 .tag(item.tag)
                                 .onAppear{

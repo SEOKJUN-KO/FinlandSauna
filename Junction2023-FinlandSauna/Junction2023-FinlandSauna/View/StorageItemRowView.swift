@@ -58,7 +58,7 @@ struct StorageItemRowView: View {
                             .bold()
                             .padding(.vertical, 4)
                             .padding(.horizontal, 24)
-                            .background(Color.theme.secondary002)
+                            .background(Color(item.color))
                             .cornerRadius(8)
                         
                     }
