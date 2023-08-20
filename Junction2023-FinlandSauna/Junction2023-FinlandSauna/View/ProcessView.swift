@@ -78,15 +78,19 @@ struct ProcessView: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 132, height: 30)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color("FS_gray002"))
                         Text(id)
+                            .foregroundColor(.white)
+                            .font(.system(size: 22, weight: .bold))
                     }
                     Spacer()
                     ZStack{
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 80, height: 30)
-                            .foregroundColor(.red)
+                            .foregroundColor(Color("FS_main002"))
                         Text(location)
+                            .foregroundColor(.white)
+                            .font(.system(size: 22, weight: .bold))
                     }
                 }
                 .frame(width: 300)
