@@ -43,7 +43,7 @@ class BeaconManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     }
 
     func centralManager(_: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData _: [String: Any], rssi RSSI: NSNumber) {
-        print("peri:\(peripheral.name)")
+//        print("peri:\(peripheral.name)")
         if let peripheralName = peripheral.name, peripheralName.contains("iPad") || peripheralName.contains("노트북") {
             if RSSI.doubleValue < 0 {
                 if peripheralName.contains("노트북") {
@@ -51,6 +51,16 @@ class BeaconManager: NSObject, ObservableObject, CBCentralManagerDelegate {
                     rssiBufferMac.append(macRSSI)
                     if rssiBufferMac.count > bufferSize {
                         rssiBufferMac.removeFirst()
+                    }
+                    if estimatedDistMac < 1.0 {
+                        isStarted = true
+//                        print("isStarted!!")
+                    }
+                    if estimatedDistMac >= 1.0 && isStarted == true {
+//                        print("hi")
+                        isStarted = false
+                        NetworkManager().putAPICall()
+                        // 라벨 변경 api 호출
                     }
                     RSSIMac = rssiBufferMac.reduce(0, +) / Double(rssiBufferMac.count)
 //                    RSSIMac = macRSSI
@@ -61,16 +71,6 @@ class BeaconManager: NSObject, ObservableObject, CBCentralManagerDelegate {
                     rssiBufferIpad.append(iPadRSSI)
                     if rssiBufferIpad.count > bufferSize {
                         rssiBufferIpad.removeFirst()
-                    }
-                    if estimatedDistIpad < 1.0 {
-                        isStarted = true
-                        print("isStarted!!")
-                    }
-                    if estimatedDistIpad >= 1.0 && isStarted == true {
-                        print("hi")
-                        isStarted = false
-                        NetworkManager().putAPICall()
-                        // 라벨 변경 api 호출
                     }
 //                    RSSIIpad = iPadRSSI
 //                    estimatedDistIpad = calculateDistance(rssi: RSSI.doubleValue)

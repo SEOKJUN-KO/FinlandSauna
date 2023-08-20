@@ -12,7 +12,7 @@ struct ProcessingView: View {
     let array: [[String]] = [["A-1", "A-2", "A-3", "A-4"], ["B-1", "B-2", "B-3", "B-4"]]
     @State private var selected: Bool = false
     @State private var storageIndex: String = "B-3"
-    @State private var moveY:CGFloat = BeaconManager().estimatedDistance*32
+    @State private var moveY:CGFloat = 230
     @State var presentSheet = true
     @State var nfc = "emptyNFC"
     @State private var index: Int = 1
@@ -92,7 +92,8 @@ struct ProcessingView: View {
                     .frame(width: 33, height: 33)
                     .foregroundColor(Color("FS_main001"))
                     
-            }.offset(x: 0, y: moveY)
+            }
+            .offset(x: 0, y: beaconManager.estimatedDistance*32)
             
             Image(nfc)
                 .resizable()
