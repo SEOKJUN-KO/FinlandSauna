@@ -32,6 +32,7 @@ struct DrawString: Codable {
     
     struct Data: Codable {
         var ITEM_NAME: String
+        var LIST_PRICE: Double
     }
 }
 
@@ -50,7 +51,7 @@ class NetworkManager {
         request.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        guard let jsonData = try? JSONEncoder().encode([DrawString(articleId: "JC000001", articleName: translatedString, data: .init(ITEM_NAME: translatedString))]) else { return }
+        guard let jsonData = try? JSONEncoder().encode([DrawString(articleId: "JC000001", articleName: translatedString, data: .init(ITEM_NAME: translatedString, LIST_PRICE: 63.44))]) else { return }
         
         request.httpBody = jsonData
         
