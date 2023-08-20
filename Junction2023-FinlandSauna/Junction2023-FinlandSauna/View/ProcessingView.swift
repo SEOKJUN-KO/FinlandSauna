@@ -19,6 +19,8 @@ struct ProcessingView: View {
     @State private var alarmShow: Bool = false
     @StateObject var beaconManager = BeaconManager()
     
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         ZStack(alignment: .top) {
             Color.theme.grayGradation005
@@ -51,7 +53,7 @@ struct ProcessingView: View {
                     
                     TabView(selection: $index){
                         ForEach(processItems) { item in
-                            ProcessView(image: item.image, id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
+                            ProcessView(image: item.image, id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving, color: item.color)
                                 .cornerRadius(20)
                                 .tag(item.tag)
                                 .onAppear{
@@ -67,7 +69,7 @@ struct ProcessingView: View {
                                         }
                                     }
                                     else{
-                                        //네비게이션 뒤로 가기
+                                        dismiss()
                                     }
                                 }
                         }

@@ -17,8 +17,9 @@ struct StorageItem: Codable, Identifiable {
     var position: String
     var tag: Int
     var image: String
+    var color: String
     
-    init(id: UUID, name: String, brand: String, itemType: String, serving: Double, amount: Int, position: String, tag: Int, image: String) {
+    init(id: UUID, name: String, brand: String, itemType: String, serving: Double, amount: Int, position: String, tag: Int, image: String, color: String) {
         self.id = id
         self.name = name
         self.brand = brand
@@ -28,6 +29,7 @@ struct StorageItem: Codable, Identifiable {
         self.position = position
         self.tag = tag
         self.image = image
+        self.color = color
     }
     
     init() {
@@ -40,5 +42,6 @@ struct StorageItem: Codable, Identifiable {
         self.position = ""
         self.tag = 1
         self.image = "footShampoo"
+        self.color = "FS_main001"
     }
 }
