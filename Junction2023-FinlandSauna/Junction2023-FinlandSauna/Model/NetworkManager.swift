@@ -50,7 +50,7 @@ class NetworkManager {
         request.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        guard let jsonData = try? JSONEncoder().encode([DrawString(articleId: "JC000004", articleName: translatedString, data: .init(ITEM_NAME: translatedString))]) else { return }
+        guard let jsonData = try? JSONEncoder().encode([DrawString(articleId: "JC000001", articleName: translatedString, data: .init(ITEM_NAME: translatedString))]) else { return }
         
         request.httpBody = jsonData
         
@@ -80,7 +80,7 @@ class NetworkManager {
         let jsonData = """
         [
           {
-            "labelCode": "0848A6C0E1D6",
+            "labelCode": "0848A6E9E1DD",
             "color": "BLUE",
             "duration": "10s",
             "patternId": 0,
