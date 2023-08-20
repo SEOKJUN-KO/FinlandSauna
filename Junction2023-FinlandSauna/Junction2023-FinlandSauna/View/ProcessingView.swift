@@ -12,7 +12,7 @@ struct ProcessingView: View {
     let array: [[String]] = [["A-1", "A-2", "A-3", "A-4"], ["B-1", "B-2", "B-3", "B-4"]]
     @State private var selected: Bool = false
     @State private var storageIndex: String = "B-3"
-    @State private var moveY:CGFloat = 280
+    @State private var moveY:CGFloat = BeaconManager().estimatedDistance*32
     @State var presentSheet = true
     @State var nfc = "emptyNFC"
     @State private var index: Int = 1
@@ -36,7 +36,7 @@ struct ProcessingView: View {
                                     .overlay(
                                         ZStack{
                                             RoundedRectangle(cornerRadius: 8)
-                                                .stroke(lineWidth: 1)
+                                                .stroke(.gray ,lineWidth: 1)
                                             Text(item)
                                                 .foregroundColor(item == storageIndex ? .white : .theme.gray004)
                                                 .font(.system(size: 20, weight: .bold))
@@ -47,13 +47,14 @@ struct ProcessingView: View {
                     }
                 }
                 .padding(.top, 53)
+                .padding(.bottom, 15)
                 ZStack {
                     Color.white
                         .cornerRadius(20)
                     
                     TabView(selection: $index){
                         ForEach(processItems) { item in
-                            ProcessView(image: item.image, id: "104-1", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
+                            ProcessView(image: item.image, id: "104-834-25", location: item.position, needNumber: item.amount, rawName: item.name, detail: item.itemType, brand: item.brand, serving: item.serving)
                                 .cornerRadius(20)
                                 .tag(item.tag)
                                 .onAppear{
@@ -82,14 +83,20 @@ struct ProcessingView: View {
             .onAppear{
                 beaconManager.startScanning()
             }
+            
+            ZStack{
+                Circle()
+                    .frame(width: 36, height: 36)
+                    .foregroundColor(.black)
+                Circle()
+                    .frame(width: 33, height: 33)
+                    .foregroundColor(Color("FS_main001"))
+                    
+            }.offset(x: 0, y: moveY)
+            
             Image(nfc)
                 .resizable()
                 .frame(width: 82.58, height: 82.58)
-            
-            Circle()
-                .frame(width: 33, height: 33)
-                .foregroundColor(.blue)
-                .offset(x: 0, y: beaconManager.estimatedDistance*32)
             
             if( alarmShow ){
                 ZStack{
@@ -109,7 +116,7 @@ struct ProcessingView: View {
             }
         }
         .onAppear{
-            relocateY(relocate: 290)
+            relocateY(relocate: 60)
         }
         .navigationBarTitleDisplayMode(.inline)
     }

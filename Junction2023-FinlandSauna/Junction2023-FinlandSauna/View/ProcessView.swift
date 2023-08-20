@@ -39,7 +39,7 @@ struct ProcessView: View {
         ZStack(alignment: .top){
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(.theme.gray006)
-                .frame(width: 361,height: 350)
+                .frame(width: 361,height: 330)
             
             VStack{
                 HStack{
@@ -87,7 +87,7 @@ struct ProcessView: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 80, height: 30)
-                            .foregroundColor(Color("FS_main002"))
+                            .foregroundColor(Color("FS_main001"))
                         Text(location)
                             .foregroundColor(.white)
                             .font(.system(size: 17, weight: .bold))
