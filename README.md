@@ -1,6 +1,43 @@
-# JunctionAsia2023-FinlandSauna
+# <img width=25px src=https://github.com/SEOKJUN-KO/FinlandSauna/assets/77708819/9e14f6cb-6dca-45ee-b819-6b740d5f880e> TranSoluM-JunctionAsia2023-FinlandSauna
 
-## 커밋메시지 작성 방법
+> **Junction Asia 2023** <br>
+> **Project Period : 2023. 08. 18 ~ 2023. 08. 20.**
+
+![image](https://github.com/SEOKJUN-KO/FinlandSauna/assets/77708819/5dc11ce0-ed94-40df-be08-f4cd79191236)
+
+An innovative solution that delivers a real-time Translation based on the user location.
+
+## 🔑 Key Point
+ - "TranSOLUM" utilizes the Bluetooth communication offered by SoluM’s Gateway to track users' indoor location. This enables us to provide real-time translated information on nearby ESLs based on the user's movements.
+
+## 💼 Buisness Value
+![image](https://github.com/SEOKJUN-KO/FinlandSauna/assets/77708819/fea68103-2fb1-4489-8752-83b48bfa5abb)
+- **🏭 In B2B**
+    - TranSOLUM could mitigate challenges faced in small to medium-sized logistics centers where non-Korean-speaking foreign workers struggle due to language barriers.
+    - By translating information into their primary language, TranSOLUM is expected to decrease errors and enhance their efficiency.
+
+- **🙋‍♂️ In B2C**
+    * We translate product info for foreign mall visitors using SOLUM's ESL
+
+- **🇰🇷 In B2G**
+    * In B2G, we can offer services like translating public signs, transit guides, and emergency info, partnering with governments to serve growing foreign tourist and multicultural needs.
+
+## ⚒️ Technique
+![image](https://github.com/SEOKJUN-KO/FinlandSauna/assets/77708819/51a0c0b7-86db-4cc7-aee5-7d4d38bc46a4)
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/seunggyun-jeong"><img src="https://github.com/seunggyun-jeong.png" width="200px;" alt=""/><br />Seunggyun Jeong<br />(iOS Developer)</td>
+    <td align="center"><a href="https://github.com/SEOKJUN-KO"><img src="https://github.com/SEOKJUN-KO.png" width="200px;" alt=""/><br />Seokjun Ko<br />(iOS Developer)</td>
+  <td align="center"><a href="https://github.com/psangwon62"><img src="https://github.com/psangwon62.png" width="200px;" alt=""/><br />Sangwon Park<br />(iOS Developer)</td>
+          <td align="center"><a href="https://github.com/OreobrO"><img src="https://github.com/OreobrO.png" width="200px;" alt=""/><br />Mingyu Choi<br />(UX/UI Designer)</td>
+             <td align="center"><a href="https://github.com/Joy19061618"><img src="https://github.com/Joy19061618.png" width="200px;" alt=""/><br />Hosic Cho<br />(Entrepreneur)</td>
+        </tr>
+</table>
+
+## 🖊️ Convention
+<details>
+<summary>Open</summary>
 <aside>
 👉 로컬에서 수정한 코드를 깃허브에 올리려면 commit을 하게 되는데요, 어떤 부분이 수정되었는지 설명하기 위해 커밋메시지를 작성합니다.
 
@@ -95,3 +132,5 @@
     fix/#05
     add/#08
   ```
+
+  <details>
