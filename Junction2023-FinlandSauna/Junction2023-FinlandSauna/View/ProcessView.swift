@@ -81,7 +81,7 @@ struct ProcessView: View {
                             .foregroundColor(Color("FS_gray002"))
                         Text(id)
                             .foregroundColor(.white)
-                            .font(.system(size: 22, weight: .bold))
+                            .font(.system(size: 17, weight: .bold))
                     }
                     Spacer()
                     ZStack{
@@ -90,7 +90,7 @@ struct ProcessView: View {
                             .foregroundColor(Color("FS_main002"))
                         Text(location)
                             .foregroundColor(.white)
-                            .font(.system(size: 22, weight: .bold))
+                            .font(.system(size: 17, weight: .bold))
                     }
                 }
                 .frame(width: 300)
