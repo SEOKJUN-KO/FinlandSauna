@@ -25,6 +25,7 @@ An innovative solution that delivers a real-time Translation based on the user l
 ## ⚒️ Technique
 ![image](https://github.com/SEOKJUN-KO/FinlandSauna/assets/77708819/51a0c0b7-86db-4cc7-aee5-7d4d38bc46a4)
 
+## 👨‍👨‍👦‍👦 Team Members
 <table>
   <tr>
     <td align="center"><a href="https://github.com/seunggyun-jeong"><img src="https://github.com/seunggyun-jeong.png" width="200px;" alt=""/><br />Seunggyun Jeong<br />(iOS Developer)</td>
